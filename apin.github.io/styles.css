@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    background-color: #d5b9b9; 
+    color: #000000; 
+    margin: 15pt;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24pt;
+    color: #007bff; 
+}
+
+h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 20pt;
+    color: #28a745; 
+}
+
+h3 {
+    font-family: 'Arial', sans-serif;
+    font-size: 16pt;
+    color: #17a2b8; 
+}
+
+p {
+    font-size: 14pt;
+    color: #000000; 
+}
+
+a:link, a:visited {
+    color: #007bff; 
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3; 
+    text-decoration: underline;
+}
+
+a:active {
+    color: #ffc107; 
+}
+
+.link-headings {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.link-headings a {
+    margin-right: 10px;
+}
+#myImage:active {
+    width: 200px;
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 40px;
+    position: relative; /* Needed for absolute positioning of the dropdown */
+}
+
+nav ul li ul {
+    display: none;
+    position: absolute;
+    left: 0;
+}
+
+nav ul li:hover ul {
+    display: block;
+}
+#myImage:active {
+    width: 1200px;
+}
