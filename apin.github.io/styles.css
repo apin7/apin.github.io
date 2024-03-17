@@ -79,3 +79,41 @@ nav ul li:hover ul {
 #myImage:active {
     width: 1200px;
 }
+body {
+    font-family: Arial, sans-serif; /*Colour and body format for forms*/
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+form {
+    background-color: #e6bbbb;
+    padding: 20px;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+input[type=text], input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+input[type=submit], button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover, button:hover {
+    background-color: #45a049;
+}

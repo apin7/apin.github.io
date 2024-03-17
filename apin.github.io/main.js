@@ -9,4 +9,18 @@ document.getElementById("myImage").addEventListener("click", function() {
         this.style.width = "200px"; // Enlarge the image
     }
 });
+function submitForm() {
+    const form = document.getElementById('myForm');
+    const formData = new FormData(form);
+    for (let [key, value] of formData.entries()) {
+        localStorage.setItem(key, value);
+    }
+    alert('Form submitted!');
+}
+
+// Optional: If you want to clear the form and local storage together
+function clearFormAndStorage() {
+    localStorage.clear();
+    document.getElementById('myForm').reset();
+}
 
