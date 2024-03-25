@@ -1,119 +1,142 @@
-body {
-    font-family: Arial, sans-serif;
-    font-size: 12pt;
-    background-color: #d5b9b9; 
-    color: #000000; 
-    margin: 15pt;
-}
-
-h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: 24pt;
-    color: #007bff; 
-}
-
-h2 {
-    font-family: 'Arial', sans-serif;
-    font-size: 20pt;
-    color: #28a745; 
-}
-
-h3 {
-    font-family: 'Arial', sans-serif;
-    font-size: 16pt;
-    color: #17a2b8; 
-}
-
-p {
-    font-size: 14pt;
-    color: #000000; 
-}
-
-a:link, a:visited {
-    color: #007bff; 
-    text-decoration: none;
-}
-
-a:hover {
-    color: #0056b3; 
-    text-decoration: underline;
-}
-
-a:active {
-    color: #ffc107; 
-}
-
-.link-headings {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
-.link-headings a {
-    margin-right: 10px;
-}
-#myImage:active {
-    width: 200px;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
 
-nav ul li {
-    display: inline-block;
-    margin-right: 40px;
-    position: relative; /* Needed for absolute positioning of the dropdown */
-}
-
-nav ul li ul {
-    display: none;
-    position: absolute;
-    left: 0;
-}
-
-nav ul li:hover ul {
-    display: block;
-}
-#myImage:active {
-    width: 1200px;
-}
 body {
-    font-family: Arial, sans-serif; /*Colour and body format for forms*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-bottom: 50px; /* Avoid content being hidden by footer */
 }
 
-.form-group {
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+img.profile-img {
+    float: right;
+    border-radius: 50%;
+    max-width: 100px;
+}
+
+/* Header and Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.navbar a:hover, .controls button:hover, .controls button:focus {
+    color: #4CAF50;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Accessibility and User Controls */
+.controls {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.slider-label {
+    margin-right: 10px;
+    color: #fff;
+}
+
+/* Sections styling */
+main {
+    padding: 20px;
+    background: #fff;
+    margin-top: 20px;
+}
+
+section {
     margin-bottom: 20px;
 }
 
-form {
-    background-color: #e6bbbb;
-    padding: 20px;
-    border-radius: 5px;
-    width: fit-content;
+section h2 {
+    margin-bottom: 10px;
 }
 
-input[type=text], input[type=email], select, textarea {
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    left: 0;
+    bottom: 0;
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 6px;
-    margin-bottom: 16px;
-    resize: vertical;
+    padding: 10px 0;
+}
+/* High Contrast Mode */
+.high-contrast {
+    background-color: #000;
+    color: #fff;
 }
 
-input[type=submit], button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+.high-contrast header,
+.high-contrast footer {
+    background: #fff;
+    color: #000;
 }
 
-input[type=submit]:hover, button:hover {
-    background-color: #45a049;
+.high-contrast .navbar a,
+.high-contrast .controls button,
+.high-contrast .slider-label {
+    color: #000;
 }
+
+.high-contrast .navbar a:hover,
+.high-contrast .controls button:hover,
+.high-contrast .controls button:focus {
+    color: #4CAF50;
+    background-color: #222; /* Adjust background color on hover/focus for visibility */
+}
+
+/* Adjusting images for high contrast */
+.high-contrast img {
+    filter: invert(100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container, .navbar {
+        flex-direction: column;
+    }
+
+    img.profile-img {
+        margin: 10px auto;
+        display: block;
+    }
+}
+
+:root {
+    --text-size: 16px; /* Default text size */
+}
+
+body {
+    font-size: var(--text-size);
+}
+
+/* Apply to other selectors as needed */

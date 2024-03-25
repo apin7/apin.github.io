@@ -1,26 +1,34 @@
-document.getElementById("namePromptButton").addEventListener("click", function() {
-    var name = prompt("Please enter your name:");
-    document.getElementById("displayName").textContent = "Hello, " + name;
-});
-document.getElementById("myImage").addEventListener("click", function() {
-    if (this.style.width === "200px") {
-        this.style.width = "100px"; // Shrink back to the original size
-    } else {
-        this.style.width = "200px"; // Enlarge the image
-    }
-});
-function submitForm() {
-    const form = document.getElementById('myForm');
-    const formData = new FormData(form);
-    for (let [key, value] of formData.entries()) {
-        localStorage.setItem(key, value);
-    }
-    alert('Form submitted!');
-}
+/*document.getElementById('contrastToggle').addEventListener('click', function() {
+    document.body.classList.toggle('high-contrast');
+});**/
 
-// Optional: If you want to clear the form and local storage together
-function clearFormAndStorage() {
-    localStorage.clear();
-    document.getElementById('myForm').reset();
-}
+document.getElementById('fontSizeSlider').addEventListener('input', function() {
+    document.documentElement.style.fontSize = this.value + 'px';
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const contrastToggle = document.getElementById('contrastToggle');
+    const fontSizeSlider = document.getElementById('fontSizeSlider');
+    const root = document.documentElement;
 
+    // Toggle high contrast mode
+   /* contrastToggle.addEventListener('click', () => {
+        document.body.classList.toggle('high-contrast');
+    });**/
+
+    // Adjust font size based on the slider
+    fontSizeSlider.addEventListener('input', () => {
+        const size = fontSizeSlider.value + 'px';
+        root.style.setProperty('--text-size', size);
+    });
+
+    // Initialize default font size
+    root.style.setProperty('--text-size', fontSizeSlider.value + 'px');
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const contrastToggle = document.getElementById('contrastToggle');
+
+    // Toggle the high-contrast mode
+    contrastToggle.addEventListener('click', () => {
+        document.body.classList.toggle('high-contrast');
+    });
+});
