@@ -1,81 +1,265 @@
+/* Reset and base styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    font-size: 12pt;
-    background-color: #d5b9b9; 
-    color: #000000; 
-    margin: 15pt;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding-bottom: 50px; /* Avoid content being hidden by footer */
 }
 
-h1 {
-    font-family: 'Arial', sans-serif;
-    font-size: 24pt;
-    color: #007bff; 
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
 }
 
-h2 {
-    font-family: 'Arial', sans-serif;
-    font-size: 20pt;
-    color: #28a745; 
+img.profile-img {
+    float: right;
+    border-radius: 50%;
+    max-width: 140px;
 }
 
-h3 {
-    font-family: 'Arial', sans-serif;
-    font-size: 16pt;
-    color: #17a2b8; 
+/* Header and Navigation */
+header {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-p {
-    font-size: 14pt;
-    color: #000000; 
-}
-
-a:link, a:visited {
-    color: #007bff; 
-    text-decoration: none;
-}
-
-a:hover {
-    color: #0056b3; 
-    text-decoration: underline;
-}
-
-a:active {
-    color: #ffc107; 
-}
-
-.link-headings {
+.header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.navbar a:hover, .controls button:hover, .controls button:focus {
+    color: #4d89d8;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Accessibility and User Controls */
+.controls {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.slider-label {
+    margin-right: 10px;
+    color: #fff;
+}
+
+/* Sections styling */
+main {
+    padding: 20px;
+    background: #fff;
+    margin-top: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
     margin-bottom: 10px;
 }
 
-.link-headings a {
-    margin-right: 10px;
-}
-#myImage:active {
-    width: 200px;
-}
-nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin-right: 40px;
-    position: relative; /* Needed for absolute positioning of the dropdown */
-}
-
-nav ul li ul {
-    display: none;
-    position: absolute;
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
     left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+/* Advanced Table Styling */
+.table-container {
+    overflow-x: auto; /* Add horizontal scroll if table overflows */
 }
 
-nav ul li:hover ul {
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.styled-table thead th,
+.styled-table tbody td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.styled-table thead th {
+    background-color: #333;
+    color: #fff;
+}
+
+.styled-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #ddd;
+}
+/* About Page */
+.about-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-image {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.profile-image img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.bio {
+    flex: 2;
+}
+
+/* High Contrast Mode */
+.high-contrast {
+    background-color: #000;
+    color: #fff;
+}
+
+.high-contrast header,
+.high-contrast footer {
+    background: #fff;
+    color: #000;
+}
+
+.high-contrast .navbar a,
+.high-contrast .controls button,
+.high-contrast .slider-label {
+    color: #000;
+}
+
+.high-contrast .navbar a:hover,
+.high-contrast .controls button:hover,
+.high-contrast .controls button:focus {
+    color: #4CAF50;
+    background-color: #222; /* Adjust background color on hover/focus for visibility */
+}
+
+/* Adjusting images for high contrast */
+.high-contrast img {
+    filter: invert(100%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container, .navbar {
+        flex-direction: column;
+    }
+
+    img.profile-img {
+        margin: 10px auto;
+        display: block;
+    }
+}
+
+:root {
+    --text-size: 16px; /* Default text size */
+}
+
+body {
+    font-size: var(--text-size);
+}
+
+/* Apply to other selectors as needed */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+.contact-section h2 {
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
     display: block;
+    margin-bottom: 5px;
+    color: #333;
 }
-#myImage:active {
-    width: 1200px;
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
 }
+
+.form-control:focus {
+    outline: none;
+    border-color: #77aaff;
+}
+
+.submit-btn {
+    background-color: #008cba;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    background-color: #005f73;
+}
+.back-arrow {
+    cursor: pointer;
+    padding: 5px 10px;
+    font-size: 10px; /* Increased size for better visibility */
+    color: #FFFFFF; /* Changed text color for contrast */
+    background-color: #2b2e30; /* Added a background color */
+    border-radius: 3px; /* Rounded corners */
+    position: absolute;
+    top: 65px;
+    left: 1px;
+    z-index: 500; /* Ensure it's above other content */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Align properly with text */
+}
+
+.back-arrow:hover {
+    background-color: #4c96e5; /* Darker shade on hover */
+    text-decoration: none; /* Consistent no underline on hover */
+}
+
+  
